@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a38527279d295e4cb1b9d1b68c2e6a6, type: 3}
+  m_Name: Gloves1
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: 4bb85e9d81dd972438a5d43bf3dd0a87, type: 3}
+  maxStackSize: 1
+  itemCost: 50
+  armorAmplifier: 1
+  healthAmplifier: 0
+  attackAmplifier: 1
+  displayName: Gloves1
+  itemCategory: Gloves
+  itemSubCategory: 
+  discreption: These Gloves give you  +1 Attack, +1 Armor.

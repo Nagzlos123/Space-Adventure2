@@ -1,0 +1,448 @@
+fileFormatVersion: 2
+guid: f7b440b61c5ba7342a1ad83633ff1456
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8776800495446386337
+    second: P1Boss animations_0
+  - first:
+      213: 8823872517405890914
+    second: P1Boss animations_1
+  - first:
+      213: 5010659818735273182
+    second: P1Boss animations_3
+  - first:
+      213: -2073538164538704999
+    second: P1Boss animations_5
+  - first:
+      213: 1146092856014593743
+    second: P1Boss animations_8
+  - first:
+      213: 1623784533483921467
+    second: P1Boss animations_12
+  - first:
+      213: 5616151540382453968
+    second: P1Boss animations_13
+  - first:
+      213: 9183625008808883920
+    second: P1Boss animations_14
+  - first:
+      213: 263089158987515231
+    second: P1Boss animations_15
+  - first:
+      213: 3294692306152138914
+    second: P1Boss animations_16
+  - first:
+      213: -6321252034901478644
+    second: P1Boss animations_17
+  - first:
+      213: 289936315137134103
+    second: P1Boss animations_18
+  - first:
+      213: 609717824819482579
+    second: P1Boss animations_19
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: P1Boss animations_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 639
+        width: 258
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59127c637a823680800000000000000
+      internalID: -8776800495446386337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1Boss animations_1
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 625
+        width: 311
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2695f4fbd41b47a70800000000000000
+      internalID: 8823872517405890914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1Boss animations_3
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 643
+        width: 330
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed40a0abe80798540800000000000000
+      internalID: 5010659818735273182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1Boss animations_5
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 634
+        width: 318
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b747286005933e0800000000000000
+      internalID: -2073538164538704999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1Boss animations_8
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 638
+        width: 314
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcedc5a516db7ef00800000000000000
+      internalID: 1146092856014593743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1Boss animations_12
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 257
+        width: 283
+        height: 358
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3025161e67d88610800000000000000
+      internalID: 1623784533483921467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1Boss animations_13
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 263
+        width: 353
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d05241021490fd40800000000000000
+      internalID: 5616151540382453968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1Boss animations_14
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 255
+        width: 355
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d67270e94ac27f70800000000000000
+      internalID: 9183625008808883920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1Boss animations_15
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 246
+        width: 346
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5505b9323ea6a300800000000000000
+      internalID: 263089158987515231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1Boss animations_16
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 307
+        width: 271
+        height: 306
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a82968423919bd20800000000000000
+      internalID: 3294692306152138914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1Boss animations_17
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 35
+        width: 86
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c037bf304c66648a0800000000000000
+      internalID: -6321252034901478644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1Boss animations_18
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 43
+        width: 82
+        height: 193
+      alignment: 9
+      pivot: {x: 0.49999925, y: 0.47752944}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e0c3fda8f060400800000000000000
+      internalID: 289936315137134103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1Boss animations_19
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 44
+        width: 104
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dfc6999127267800800000000000000
+      internalID: 609717824819482579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      P1Boss animations_13: 5616151540382453968
+      P1Boss animations_0: -8776800495446386337
+      P1Boss animations_18: 289936315137134103
+      P1Boss animations_17: -6321252034901478644
+      P1Boss animations_12: 1623784533483921467
+      P1Boss animations_3: 5010659818735273182
+      P1Boss animations_16: 3294692306152138914
+      P1Boss animations_8: 1146092856014593743
+      P1Boss animations_15: 263089158987515231
+      P1Boss animations_1: 8823872517405890914
+      P1Boss animations_5: -2073538164538704999
+      P1Boss animations_19: 609717824819482579
+      P1Boss animations_14: 9183625008808883920
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

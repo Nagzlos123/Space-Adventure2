@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b9b287cb334394fbb5c4acbffc7d8d, type: 3}
+  m_Name: System1Info6
+  m_EditorClassIdentifier: 
+  panelName: Gaining items
+  displayImage: {fileID: 21300000, guid: 6db0047b69bae51458272853562a0b2a, type: 3}
+  discreption: When you kill enemies, they drop items which you can pick up.

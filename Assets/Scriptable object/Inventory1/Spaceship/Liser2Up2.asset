@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a38527279d295e4cb1b9d1b68c2e6a6, type: 3}
+  m_Name: Liser2Up2
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: 7dac426b03ae2764f89ec30c2955936f, type: 3}
+  maxStackSize: 1
+  itemCost: 400
+  armorAmplifier: 0
+  healthAmplifier: 0
+  attackAmplifier: 10
+  displayName: Liser2Up2
+  itemCategory: SpaceshipElements
+  itemSubCategory: Liser2
+  discreption: This Upgade gives you  +10 Attack.

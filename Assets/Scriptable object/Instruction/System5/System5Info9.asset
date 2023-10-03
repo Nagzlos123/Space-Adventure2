@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b9b287cb334394fbb5c4acbffc7d8d, type: 3}
+  m_Name: System5Info9
+  m_EditorClassIdentifier: 
+  panelName: Slot occupied
+  displayImage: {fileID: 21300000, guid: f8e055e5885f5cc438d2bcbed8d32052, type: 3}
+  discreption: You cannot add another item to the occupied slot. Remove that item
+    first from the slot.

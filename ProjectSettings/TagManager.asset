@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Play
+  - Enemy
+  - Portal
+  - Obstacle
+  - Coin
+  - Fllip2
+  - Fllip1
+  - GroundEnemy
+  - Artefact4
+  - Artefact3
+  - Artefact2
+  - Artefact1
+  - ShopComponent
+  - Image
+  - Projectile
+  - KredytDrop
+  - EnemyProjectile
+  - Shop
+  - itemDrop
+  - Death
+  - KristalSpawner
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Enemy
+  - ItemInfoPanel
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2258068409
+    locked: 0
+  - name: Player
+    uniqueID: 2961551035
+    locked: 0

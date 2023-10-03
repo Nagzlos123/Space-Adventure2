@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a38527279d295e4cb1b9d1b68c2e6a6, type: 3}
+  m_Name: Pants9
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: c42a86e2f1b2667418ac6399820db2d3, type: 3}
+  maxStackSize: 1
+  itemCost: 4500
+  armorAmplifier: 27
+  healthAmplifier: 45
+  attackAmplifier: 0
+  displayName: Pants9
+  itemCategory: Pants
+  itemSubCategory: 
+  discreption: These Pants give you  +27 Armor, +45 Health.

@@ -1,0 +1,563 @@
+fileFormatVersion: 2
+guid: 2b5c4edc1927a994dab81feebd9606e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5386714918832659999
+    second: GroundEnemy5_0
+  - first:
+      213: 6109233661297257943
+    second: GroundEnemy5_1
+  - first:
+      213: -5982475088043270094
+    second: GroundEnemy5_2
+  - first:
+      213: -4508361620183065977
+    second: GroundEnemy5_3
+  - first:
+      213: 2476463847697607666
+    second: GroundEnemy5_4
+  - first:
+      213: -4650231334564338758
+    second: GroundEnemy5_5
+  - first:
+      213: 7004595939566399650
+    second: GroundEnemy5_8
+  - first:
+      213: -558447395036495557
+    second: GroundEnemy5_9
+  - first:
+      213: -9204315687081784553
+    second: GroundEnemy5_11
+  - first:
+      213: -7486614488688899572
+    second: GroundEnemy5_12
+  - first:
+      213: 700319483757967115
+    second: GroundEnemy5_13
+  - first:
+      213: -2413039856618104784
+    second: GroundEnemy5_14
+  - first:
+      213: 2837751665892282407
+    second: GroundEnemy5_15
+  - first:
+      213: 1125912209597775088
+    second: GroundEnemy5_16
+  - first:
+      213: -1488714694741626018
+    second: GroundEnemy5_17
+  - first:
+      213: -248121583094716574
+    second: GroundEnemy5_18
+  - first:
+      213: 1319305160945618391
+    second: GroundEnemy5_19
+  - first:
+      213: -3731397508063354176
+    second: GroundEnemy5_20
+  - first:
+      213: -3876284685416868827
+    second: GroundEnemy5_21
+  - first:
+      213: 5476290058057051122
+    second: GroundEnemy5_6
+  - first:
+      213: 4486488454124882968
+    second: GroundEnemy5_7
+  - first:
+      213: -208652663206429598
+    second: GroundEnemy5_10
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GroundEnemy5_0
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 666
+        width: 216
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e515bbda471ca40800000000000000
+      internalID: 5386714918832659999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_1
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 677
+        width: 171
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd6b7795ab58c450800000000000000
+      internalID: 6109233661297257943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_4
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 692
+        width: 183
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fbec15afba2e5220800000000000000
+      internalID: 2476463847697607666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_5
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 683
+        width: 209
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3e6eb3d3f077fb0800000000000000
+      internalID: -4650231334564338758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_8
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 659
+        width: 227
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0bff425e2553160800000000000000
+      internalID: 7004595939566399650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_9
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 647
+        width: 182
+        height: 282
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b318b119d0fff38f0800000000000000
+      internalID: -558447395036495557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_11
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 324
+        width: 183
+        height: 310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b4fee26a3b34080800000000000000
+      internalID: -9204315687081784553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_12
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 313
+        width: 264
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ac76fc9c33a1890800000000000000
+      internalID: -7486614488688899572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_13
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 307
+        width: 240
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07bdaa2cd808b900800000000000000
+      internalID: 700319483757967115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_14
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 314
+        width: 229
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0381b650909238ed0800000000000000
+      internalID: -2413039856618104784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_15
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 314
+        width: 161
+        height: 293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7205846ea18b16720800000000000000
+      internalID: 2837751665892282407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_16
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 342
+        width: 204
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fcb955703b00af00800000000000000
+      internalID: 1125912209597775088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_17
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 322
+        width: 204
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5375086fd5075be0800000000000000
+      internalID: -1488714694741626018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_20
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 25
+        width: 206
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c22b187cb9673cc0800000000000000
+      internalID: -3731397508063354176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_21
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 34
+        width: 188
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 524d075bd9ba43ac0800000000000000
+      internalID: -3876284685416868827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_6
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 663
+        width: 211
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fb6e7d0bc0bffb40800000000000000
+      internalID: 5476290058057051122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GroundEnemy5_7
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 663
+        width: 201
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c41058a75334e30800000000000000
+      internalID: 4486488454124882968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      GroundEnemy5_17: -1488714694741626018
+      GroundEnemy5_13: 700319483757967115
+      GroundEnemy5_12: -7486614488688899572
+      GroundEnemy5_1: 6109233661297257943
+      GroundEnemy5_9: -558447395036495557
+      GroundEnemy5_16: 1125912209597775088
+      GroundEnemy5_20: -3731397508063354176
+      GroundEnemy5_7: 4486488454124882968
+      GroundEnemy5_8: 7004595939566399650
+      GroundEnemy5_6: 5476290058057051122
+      GroundEnemy5_0: 5386714918832659999
+      GroundEnemy5_14: -2413039856618104784
+      GroundEnemy5_15: 2837751665892282407
+      GroundEnemy5_4: 2476463847697607666
+      GroundEnemy5_21: -3876284685416868827
+      GroundEnemy5_5: -4650231334564338758
+      GroundEnemy5_11: -9204315687081784553
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
