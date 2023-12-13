@@ -12,9 +12,10 @@ A massive 2D computer game created using the Unity Engine. The application conta
 The game also has mechanisms for selling and buying items. 
 
 In system number 3, you can buy 3 chests (lootboxes) in the store:
+
 - the first chest costs 2000 credits and contains 4 random items,
 - the second chest costs 4000 credits and contains 6 random items,
--the third chest costs 6,000 credits and contains 8 random items,
+- the third chest costs 6,000 credits and contains 8 random items,
 Drawn items may be repeated multiple times.
 
 
