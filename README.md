@@ -20,6 +20,10 @@ These are:
 - Health – if health points are equal to zero, the character dies.
 
 
+
+Character stats can be increased by using special items that can be obtained in various ways. Most often, it involves spending a specific amount of money.
+Credits are the in-game currency. They can be obtained by fighting enemies in space, sell items or use helper buttons adding predefined credit amounts.
+
 This massive 2D computer game contains inventory systems consisting of over 120 items implemented using:
 - Scriptable objects,
 - Vertical Layout Groups,
