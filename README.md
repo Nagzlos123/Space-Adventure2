@@ -1,8 +1,26 @@
 # Space-Adventure2
+My bigest and most ambitious project in my life created in C# and Unity.
 
-A computer game application with the ability to switch between five equipment systems was designed to test them. The main part of the application was made using the Unity engine. Visual Studio 2019 and the C# language were used to write the appropriate software. A user interface ergonomic evaluation checklist based on the Ravden-Johnson checklist was used to evaluate the individual equipment systems.
+## Description
+Aplication is intended to provide multi-threaded gameplay combining a classic platform game with a shooter top down like in "Space Adventure" link: https://github.com/Nagzlos123/Space-Adventure, 
+gains money and spend it in the store, which allows you to obtain items, equip them and increasing your statistics.
 
-A massive 2D computer game created using the Unity Engine. The application contains inventory systems consisting of over 120 items implemented using:
+A computer game application with the ability to switch between five equipment systems was designed to test them. The main part of the application was made using the Unity engine. Visual Studio 2019 and the C# language were used to write the appropriate software. 
+
+## Gameplay
+Each game has a specific goal that the user must complete able to beat the game. The described application project also has a main goal, which is
+completing a level on a planet after defeating all opponents and obstacles distributed on its surface. Reaching the main goal is not an easy task because there are many opponents
+is much more powerful than the player character. For the user to have any chance, he needs to increase his stats. During design, three statistics were selected that can be increased during gameplay. 
+These are:
+
+- Attack - increasing the damage the user can deal opponents,
+  
+- Armor – protects the player from damage; until the armor points are gone equal to zero, the player will not lose health points,
+  
+- Health – if health points are equal to zero, the character dies.
+
+
+This massive 2D computer game contains inventory systems consisting of over 120 items implemented using:
 - Scriptable objects,
 - Vertical Layout Groups,
 - Content Size Fitters,
@@ -35,6 +53,7 @@ must click on one of the items in the cart.
 
   The read-write system has been created and is responsible for writing and reading data to
 Save.txt file.
+
 ## Images
 ![](Github_images/01_MainMenu.png)
 
