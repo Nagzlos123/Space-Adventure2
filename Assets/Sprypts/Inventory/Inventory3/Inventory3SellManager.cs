@@ -66,7 +66,7 @@ public class Inventory3SellManager : MonoBehaviour
 
     private void RemoweSoldItem()
     {
-        inventory3.GetComponent<InventoryItemManager>().RemoweItem(itemData);
+        //inventory3.GetComponent<InventoryItemManager>().RemoweItem(itemData);
         
     }
     public void ResetSellPanelItemData()

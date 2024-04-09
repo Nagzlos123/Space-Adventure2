@@ -7,7 +7,7 @@ public class MainMenuManager : MonoBehaviour
 {
     public void StartGame()
     {
-        PlayerPrefs.SetInt("InventorySystemActive", 1);
+        PlayerPrefs.SetInt("InventorySystemActive", 6);
         PlayerPrefs.SetInt("yourKredytNumber", 0);
         PlayerPrefs.SetInt("GameLoaded", 0);
     }

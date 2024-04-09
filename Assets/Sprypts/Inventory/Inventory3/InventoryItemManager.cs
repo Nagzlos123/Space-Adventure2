@@ -19,9 +19,9 @@ public class InventoryItemManager : MonoBehaviour
     [SerializeField] private InventoryItemData[] shouldersTtems;
 
     [SerializeField] private InventoryItemData[] spaceshipItems;
-    public List<PlayerInvemtorySlot> playerSlots2;
-    public List<PlayerInvemtorySlot4> playerSlots4;
-    public List<PlayerInvemtorySlot5> playerSlots5;
+    public List<PlayerInvemtorySlot> playerSlots;
+    
+    
 
     public InventoryItemData[] chestItemSet;
 
@@ -29,465 +29,103 @@ public class InventoryItemManager : MonoBehaviour
     [SerializeField] private GameObject mainPanel;
     [SerializeField] private GameObject shopPanel;
     public List<InventoryItemData> inventoryItems;
-    [SerializeField] private GameObject shopSellBuyManage4;
+    [SerializeField] private GameObject shopSellBuyManage;
     [SerializeField] private GameObject shopItemsManager5;
-    public Inventory3Maneger inventory3;
+    
     public Inventory2Manager inventory2;
     public Inventory3ItemSlotUI slotUI;
 
 
     public int itemsLength = 10;
-    private int numberOfItems = 5;
-    private int randomRingsItem;
-    private int randomEarringsItem;
-    private int randomNecklacesItem;
-    private int freeSlot;
-    private int randomJewelryItem;
-
     public int chestItemSetNumber;
     
-
+    private enum TypeOfOperation
+    {
+        AddToShop,
+        AddToInventory
+    }
     private void Start()
     {
-        inventoryItems = inventory3.Items;
-    }
-    //Function for Inventory number 3
-    private void CheckInventorySlots()
-    {
-
-        for (int itemslot = itemsSlotsUI.Length - 1; itemslot >= 0; itemslot--)
-        {
-
-            InventoryItemData itemData = itemsSlotsUI[itemslot].GetComponent<Inventory3ItemSlotUI>().itemData;
-            while (itemData == null)
-            {
-                freeSlot = itemslot;
-
-                Debug.Log("ItemSlot" + itemslot);
-                break;
-            }
-
-        }
-
-    }
-    //Function for Inventory number 3
-    public void Add5RandomItems()
-    {
-
-        Debug.Log("Items set added!");
-        for (int i = 0; i < numberOfItems; i++)
-        {
-            randomRingsItem = Random.Range(0, itemsLength);
-            randomEarringsItem = Random.Range(0, itemsLength);
-            randomNecklacesItem = Random.Range(0, itemsLength);
-
-            InventoryItemData[] randomItems = { ringsItems[randomRingsItem], earringsItems[randomEarringsItem], necklacesItems[randomNecklacesItem] };
-
-            var jewelryItemsLength = randomItems.Length;
-
-            randomJewelryItem = Random.Range(0, jewelryItemsLength);
-            if (inventory3.Items.Count < 49)
-            {
-                CheckInventorySlots();
-                inventory3.AddItem(randomItems[randomJewelryItem]);
-                inventory3.AddItemToInventory(randomItems[randomJewelryItem], itemsSlotsUI[freeSlot]);
-            }
-            if (inventory3.Items.Count >= 49)
-            {
-                Debug.Log("Inventory is full!");
-            }
-
-        }   
-    }
-    //Function for Inventory number 3
-    public void AddOwnedItems()
-    {
-        foreach (var item in inventoryItems)
-        {
-            if (inventory3.Items.Count < 49)
-            {
-                CheckInventorySlots();
-                inventory3.AddItem(item);
-                inventory3.AddItemToInventory(item, itemsSlotsUI[freeSlot]);
-            }
-            if (inventory3.Items.Count >= 49)
-            {
-                Debug.Log("Inventory is full!");
-            }
-        }
-    }
-    //Function for Inventory number 3
-    public void AddAllItems(Inventory3Maneger inventory3)
-    {
-
-        Debug.Log("All items in Inventory System 3 added!");
         
-        for (int i = 0; i < ringsItems.Length; i++)
-        {
-           
-            if (inventory3.Items.Count < 49)
-            {
-                CheckInventorySlots();
-                inventory3.AddItem(ringsItems[i]);
-                inventory3.AddItemToInventory(ringsItems[i], itemsSlotsUI[freeSlot]);
-            }
-            if(inventory3.Items.Count >= 49)
-            {
-                Debug.Log("Inventory is full!");
-            }
-           
-        }
-
-        for (int i = 0; i < earringsItems.Length; i++)
-        {
-
-            if (inventory3.Items.Count < 49)
-            {
-                CheckInventorySlots();
-                inventory3.AddItem(earringsItems[i]);
-                inventory3.AddItemToInventory(earringsItems[i], itemsSlotsUI[freeSlot]);
-            }
-            if (inventory3.Items.Count >= 49)
-            {
-                Debug.Log("Inventory is full!");
-            }
-
-            
-        }
-
-        for (int i = 0; i < necklacesItems.Length; i++)
-        {
-            if (inventory3.Items.Count < 49)
-            {
-                CheckInventorySlots();
-                inventory3.AddItem(necklacesItems[i]);
-                inventory3.AddItemToInventory(necklacesItems[i], itemsSlotsUI[freeSlot]);
-            }
-            if (inventory3.Items.Count >= 49)
-            {
-                Debug.Log("Inventory is full!");
-            }
-
-        }
     }
 
-    public void AddAllItems(Inventory2Manager inventory2)
+    private void AddItems(InventoryItemData[] items, TypeOfOperation operation)
     {
-        Debug.Log("All items in Inventory System 2 added!");
-        for (int i = 0; i < ringsItems.Length; i++)
+        switch (operation)
         {
-            inventory2.AddItem(ringsItems[i]);
+            case TypeOfOperation.AddToShop:
+                for (int i = 0; i < items.Length; i++)
+                {
+                    shopSellBuyManage.GetComponent<ShopSellBuyManager>()
+                        .AddItem(shopSellBuyManage.GetComponent<ShopSellBuyManager>().ShopItems, items[i]);
+                }
+                break;
+            case TypeOfOperation.AddToInventory:
+                for (int i = 0; i < items.Length; i++)
+                {
+                    inventory2.AddItem(items[i]);
+                    shopSellBuyManage.GetComponent<ShopSellBuyManager>()
+                        .AddItem(shopSellBuyManage.GetComponent<ShopSellBuyManager>().InventorySellItems, items[i]);
+                }
+                break;
+            default:
+                break;
         }
+   
+    }
 
-        for (int i = 0; i < earringsItems.Length; i++)
-        {
-            inventory2.AddItem(earringsItems[i]);
-        }
+  
+    public void AddShopItemsInventory()
+    {
+        AddItems(ringsItems, TypeOfOperation.AddToShop);
+        AddItems(earringsItems, TypeOfOperation.AddToShop);
+        AddItems(necklacesItems, TypeOfOperation.AddToShop);
+        AddItems(helmetsItems, TypeOfOperation.AddToShop);
+        AddItems(bodyArmorItems, TypeOfOperation.AddToShop);
+        AddItems(pantsItems, TypeOfOperation.AddToShop);
+        AddItems(bootsItems, TypeOfOperation.AddToShop);
+        AddItems(glovesItems, TypeOfOperation.AddToShop);
+        AddItems(bracersItems, TypeOfOperation.AddToShop);
+        AddItems(shouldersTtems, TypeOfOperation.AddToShop);
+        AddItems(spaceshipItems, TypeOfOperation.AddToShop);
 
-        for (int i = 0; i < necklacesItems.Length; i++)
-        {
-            inventory2.AddItem(necklacesItems[i]);
-        }
+  
+        shopSellBuyManage.GetComponent<ShopSellBuyManager>().SortItemList(shopSellBuyManage.GetComponent<ShopSellBuyManager>().ShopItems);
+        shopSellBuyManage.GetComponent<ShopSellBuyManager>().CreateShopSlots("Armor");
+    }
 
-        for (int i = 0; i < helmetsItems.Length; i++)
-        {
-            inventory2.AddItem(helmetsItems[i]);
-        }
+    public void AddAllItems()
+    {
+        Debug.Log("All items in Inventory System added!");
 
-        for (int i = 0; i < bodyArmorItems.Length; i++)
-        {
-            inventory2.AddItem(bodyArmorItems[i]);
-        }
-
-        for (int i = 0; i < pantsItems.Length; i++)
-        {
-            inventory2.AddItem(pantsItems[i]);
-        }
-
-        for (int i = 0; i < bootsItems.Length; i++)
-        {
-            inventory2.AddItem(bootsItems[i]);
-        }
-
-        for (int i = 0; i < glovesItems.Length; i++)
-        {
-            inventory2.AddItem(glovesItems[i]);
-        }
-
-        for (int i = 0; i < bracersItems.Length; i++)
-        {
-            inventory2.AddItem(bracersItems[i]);
-        }
-
-        for (int i = 0; i < shouldersTtems.Length; i++)
-        {
-            inventory2.AddItem(shouldersTtems[i]);
-        }
-
-        for (int i = 0; i < spaceshipItems.Length; i++)
-        {
-            inventory2.AddItem(spaceshipItems[i]);
-        }
+        AddItems(ringsItems, TypeOfOperation.AddToInventory);
+        AddItems(earringsItems, TypeOfOperation.AddToInventory);
+        AddItems(necklacesItems, TypeOfOperation.AddToInventory);
+        AddItems(helmetsItems, TypeOfOperation.AddToInventory);
+        AddItems(bodyArmorItems, TypeOfOperation.AddToInventory);
+        AddItems(pantsItems, TypeOfOperation.AddToInventory);
+        AddItems(bootsItems, TypeOfOperation.AddToInventory);
+        AddItems(glovesItems, TypeOfOperation.AddToInventory);
+        AddItems(bracersItems, TypeOfOperation.AddToInventory);
+        AddItems(shouldersTtems, TypeOfOperation.AddToInventory);
+        AddItems(spaceshipItems, TypeOfOperation.AddToInventory);
+      
         inventory2.SortItemList();
         inventory2.CreateInventorySlots();
-    }
-    public void AddShopItemsInventory4()
-    {
-        for (int i = 0; i < ringsItems.Length; i++)
-        {
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems, ringsItems[i]);
-        }
-
-        for (int i = 0; i < earringsItems.Length; i++)
-        {
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems, earringsItems[i]);
-        }
-
-        for (int i = 0; i < necklacesItems.Length; i++)
-        {
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems, necklacesItems[i]);
-        }
-
-        for (int i = 0; i < helmetsItems.Length; i++)
-        {
-           shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems, helmetsItems[i]);
-        }
-
-        for (int i = 0; i < bodyArmorItems.Length; i++)
-        {
-           shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems, bodyArmorItems[i]);
-        }
-
-        for (int i = 0; i < pantsItems.Length; i++)
-        {
-           shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems, pantsItems[i]);
-        }
-
-        for (int i = 0; i < bootsItems.Length; i++)
-        {
-           shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems, bootsItems[i]);
-        }
-
-        for (int i = 0; i < glovesItems.Length; i++)
-        {
-           shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems, glovesItems[i]);
-        }
-
-        for (int i = 0; i < bracersItems.Length; i++)
-        {
-           shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems, bracersItems[i]);
-        }
-
-        for (int i = 0; i < shouldersTtems.Length; i++)
-        {
-           shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems, shouldersTtems[i]);
-        }
-
-        for (int i = 0; i < spaceshipItems.Length; i++)
-        {
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems, spaceshipItems[i]);
-        }
-        shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().SortItemList(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems);
-        shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().CreateShopSlots("Armor");
+        shopSellBuyManage.GetComponent<ShopSellBuyManager>().SortItemList(shopSellBuyManage.GetComponent<ShopSellBuyManager>().InventorySellItems);
+        shopSellBuyManage.GetComponent<ShopSellBuyManager>().CreateInventorySlots("Armor");
+        shopSellBuyManage.GetComponent<ShopSellBuyManager>().ShopItems.Clear();
+        shopSellBuyManage.GetComponent<ShopSellBuyManager>().CreateShopSlots("Armor");
     }
 
-    public void AddAllItems(Inventory4Manager inventory4)
-    {
-        Debug.Log("All items in Inventory System 4 added!");
-        for (int i = 0; i < ringsItems.Length; i++)
-        {
-            inventory4.AddItem(ringsItems[i]);
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().InventorySellItems, ringsItems[i]);
-        }
+  
 
-        for (int i = 0; i < earringsItems.Length; i++)
-        {
-            inventory4.AddItem(earringsItems[i]);
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().InventorySellItems, ringsItems[i]);
-        }
-
-        for (int i = 0; i < necklacesItems.Length; i++)
-        {
-            inventory4.AddItem(necklacesItems[i]);
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().InventorySellItems, necklacesItems[i]);
-        }
-
-        for (int i = 0; i < helmetsItems.Length; i++)
-        {
-            inventory4.AddItem(helmetsItems[i]);
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().InventorySellItems, helmetsItems[i]);
-        }
-
-        for (int i = 0; i < bodyArmorItems.Length; i++)
-        {
-            inventory4.AddItem(bodyArmorItems[i]);
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().InventorySellItems, bodyArmorItems[i]);
-        }
-
-        for (int i = 0; i < pantsItems.Length; i++)
-        {
-            inventory4.AddItem(pantsItems[i]);
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().InventorySellItems, pantsItems[i]);
-        }
-
-        for (int i = 0; i < bootsItems.Length; i++)
-        {
-            inventory4.AddItem(bootsItems[i]);
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().InventorySellItems, bootsItems[i]);
-        }
-
-        for (int i = 0; i < glovesItems.Length; i++)
-        {
-            inventory4.AddItem(glovesItems[i]);
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().InventorySellItems, glovesItems[i]);
-        }
-
-        for (int i = 0; i < bracersItems.Length; i++)
-        {
-            inventory4.AddItem(bracersItems[i]);
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().InventorySellItems, bracersItems[i]);
-        }
-
-        for (int i = 0; i < shouldersTtems.Length; i++)
-        {
-            inventory4.AddItem(shouldersTtems[i]);
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().InventorySellItems, shouldersTtems[i]);
-        }
-
-        for (int i = 0; i < spaceshipItems.Length; i++)
-        {
-            inventory4.AddItem(spaceshipItems[i]);
-            shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().AddItem(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().InventorySellItems, spaceshipItems[i]);
-        }
-        inventory4.SortItemList();
-        inventory4.CreateInventorySlots("Armor");
-        shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().SortItemList(shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().InventorySellItems);
-        shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().CreateInventorySlots("Armor");
-        shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems.Clear();
-        shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().CreateShopSlots("Armor");
-    }
-
-    public void AddShopItemsInventory5()
-    {
-        for (int i = 0; i < ringsItems.Length; i++)
-        {
-            shopItemsManager5.GetComponent<ShopItemsManager5>().AddItem(shopItemsManager5.GetComponent<ShopItemsManager5>().ShopItems, ringsItems[i]);
-        }
-
-        for (int i = 0; i < earringsItems.Length; i++)
-        {
-            shopItemsManager5.GetComponent<ShopItemsManager5>().AddItem(shopItemsManager5.GetComponent<ShopItemsManager5>().ShopItems, earringsItems[i]);
-        }
-
-        for (int i = 0; i < necklacesItems.Length; i++)
-        {
-            shopItemsManager5.GetComponent<ShopItemsManager5>().AddItem(shopItemsManager5.GetComponent<ShopItemsManager5>().ShopItems, necklacesItems[i]);
-        }
-
-        for (int i = 0; i < helmetsItems.Length; i++)
-        {
-            shopItemsManager5.GetComponent<ShopItemsManager5>().AddItem(shopItemsManager5.GetComponent<ShopItemsManager5>().ShopItems, helmetsItems[i]);
-        }
-
-        for (int i = 0; i < bodyArmorItems.Length; i++)
-        {
-            shopItemsManager5.GetComponent<ShopItemsManager5>().AddItem(shopItemsManager5.GetComponent<ShopItemsManager5>().ShopItems, bodyArmorItems[i]);
-        }
-
-        for (int i = 0; i < pantsItems.Length; i++)
-        {
-            shopItemsManager5.GetComponent<ShopItemsManager5>().AddItem(shopItemsManager5.GetComponent<ShopItemsManager5>().ShopItems, pantsItems[i]);
-        }
-
-        for (int i = 0; i < bootsItems.Length; i++)
-        {
-            shopItemsManager5.GetComponent<ShopItemsManager5>().AddItem(shopItemsManager5.GetComponent<ShopItemsManager5>().ShopItems, bootsItems[i]);
-        }
-
-        for (int i = 0; i < glovesItems.Length; i++)
-        {
-            shopItemsManager5.GetComponent<ShopItemsManager5>().AddItem(shopItemsManager5.GetComponent<ShopItemsManager5>().ShopItems, glovesItems[i]);
-        }
-
-        for (int i = 0; i < bracersItems.Length; i++)
-        {
-            shopItemsManager5.GetComponent<ShopItemsManager5>().AddItem(shopItemsManager5.GetComponent<ShopItemsManager5>().ShopItems, bracersItems[i]);
-        }
-
-        for (int i = 0; i < shouldersTtems.Length; i++)
-        {
-            shopItemsManager5.GetComponent<ShopItemsManager5>().AddItem(shopItemsManager5.GetComponent<ShopItemsManager5>().ShopItems, shouldersTtems[i]);
-        }
-
-        shopItemsManager5.GetComponent<ShopItemsManager5>().SortItemList(shopItemsManager5.GetComponent<ShopItemsManager5>().ShopItems);
-        //shopItemsManager5.GetComponent<ShopItemsManager5>().CreateShopSlots("Armor");
-    }
-    public void AddAllItems(Inventory5Manager inventory5)
-    {
-        Debug.Log("All items in Inventory System 5 added!");
-        for (int i = 0; i < ringsItems.Length; i++)
-        {
-            inventory5.AddItem(ringsItems[i]);
-        }
-
-        for (int i = 0; i < earringsItems.Length; i++)
-        {
-            inventory5.AddItem(earringsItems[i]);
-        }
-
-        for (int i = 0; i < necklacesItems.Length; i++)
-        {
-            inventory5.AddItem(necklacesItems[i]);
-        }
-
-        for (int i = 0; i < helmetsItems.Length; i++)
-        {
-            inventory5.AddItem(helmetsItems[i]);
-        }
-
-        for (int i = 0; i < bodyArmorItems.Length; i++)
-        {
-            inventory5.AddItem(bodyArmorItems[i]);
-        }
-
-        for (int i = 0; i < pantsItems.Length; i++)
-        {
-            inventory5.AddItem(pantsItems[i]);
-        }
-
-        for (int i = 0; i < bootsItems.Length; i++)
-        {
-            inventory5.AddItem(bootsItems[i]);
-        }
-
-        for (int i = 0; i < glovesItems.Length; i++)
-        {
-            inventory5.AddItem(glovesItems[i]);
-        }
-
-        for (int i = 0; i < bracersItems.Length; i++)
-        {
-            inventory5.AddItem(bracersItems[i]);
-        }
-
-        for (int i = 0; i < shouldersTtems.Length; i++)
-        {
-            inventory5.AddItem(shouldersTtems[i]);
-        }
-        inventory5.SortItemList();
-        inventory5.CreateInventorySlots();
-
-        
-        shopItemsManager5.GetComponent<ShopItemsManager5>().ShopItems.Clear();
-        
-
-    }
     public void RemoveAllItems(Inventory2Manager inventory2)
     {
         inventory2.ClearItemsList();
         inventory2.CreateInventorySlots();
         Debug.Log(" All items in Inventory System 2 was removed!");
-        foreach (var item in playerSlots2)
+        foreach (var item in playerSlots)
         {
             item.ResetPlayerSlot();
         }
@@ -498,27 +136,19 @@ public class InventoryItemManager : MonoBehaviour
         PlayerPrefs.SetInt("SpaceshipFullHP", 600);
     }
 
- 
-    //Function for Inventory number 3
-    public void RemoveAllItems(Inventory3Maneger inventory3)
+
+
+
+
+    public void RemoveAllItems()
     {
-        inventory3.Items.Clear();
-        UpdateInventory();
-        Debug.Log(" All items in Inventory System 3 was removed!");
-       
-    }
-
-
-
-    public void RemoveAllItems(Inventory4Manager inventory4)
-    {
-        inventory4.InventoryItems.Clear();
-        inventory4.CreateInventorySlots();
-        shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().InventorySellItems.Clear();
-        shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().CreateInventorySlots();
-        shopSellBuyManage4.GetComponent<ShopSellBuyManager4>().ShopItems.Clear();
-        AddShopItemsInventory4();
-        foreach (var item in playerSlots4)
+        inventory2.ClearItemsList();
+        inventory2.CreateInventorySlots();
+        shopSellBuyManage.GetComponent<ShopSellBuyManager>().InventorySellItems.Clear();
+        shopSellBuyManage.GetComponent<ShopSellBuyManager>().CreateInventorySlots();
+        shopSellBuyManage.GetComponent<ShopSellBuyManager>().ShopItems.Clear();
+        AddShopItemsInventory();
+        foreach (var item in playerSlots)
         {
             item.ResetPlayerSlot();
         }
@@ -528,62 +158,17 @@ public class InventoryItemManager : MonoBehaviour
         PlayerPrefs.SetInt("SpaceshipFullAttack", 5);
         PlayerPrefs.SetInt("SpaceshipFullHP", 600);
 
-        Debug.Log(" All items in Inventory System 4 was removed!");
+        Debug.Log(" All items in Inventory System was removed!");
     }
 
-    public void RemoveAllItems(Inventory5Manager inventory5)
-    {
-        inventory5.InventoryItems.Clear();
-        inventory5.CreateInventorySlots();
-        shopItemsManager5.GetComponent<ShopItemsManager5>().ShopItems.Clear();
-        AddShopItemsInventory5();
-        foreach (var item in playerSlots5)
-        {
-            item.ResetPlayerSlot();
-        }
-        PlayerPrefs.SetInt("PlayerFullHP", 1000);
-        PlayerPrefs.SetInt("PlayerFullArmor", 500);
-        PlayerPrefs.SetInt("PlayerFullAttack", 20);
 
-        Debug.Log(" All items in Inventory System 4 was removed!");
-    }
 
     
-    //Function for Inventory number 3
-
-    public void UpdateInventory()
-    {
-        for (int i = 0; i < itemsSlotsUI.Length; i++)
-        {
-            itemsSlotsUI[i].GetComponent<Inventory3ItemSlotUI>().ClearSlot();
-            itemsSlotsUI[i].GetComponent<Inventory3ItemSlotUI>().itemData = null;
-        }
-
-        for (int i = 0; i < inventoryItems.Count; i++)
-        {
-            inventory3.AddItemToInventory(inventoryItems[i], itemsSlotsUI[i]);
-            itemsSlotsUI[i].GetComponent<Inventory3ItemSlotUI>().SetToDefault();
-        }
-    }
-    public void Update()
-    {
-        //inventoryItems = inventory3.Items;
-    }
-    public void GetItemDataFromUISlot(GameObject itemSlotUI)
-    {
-        InventoryItemData currentItemData = itemSlotUI.GetComponent<Inventory3ItemSlotUI>().itemData;
-
-    }
 
 
 
-    public void RemoweItem(InventoryItemData itemData)
-    {
-        inventory3.RemoveItem(itemData);
-        //inventory3.RemoveItemFromInventory(itemData, );
-        UpdateInventory();
-        
-    }
+
+
 
 
     //Function for Inventory number 2

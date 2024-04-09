@@ -1,0 +1,72 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PlayerInvemtorySlot : MonoBehaviour
+{
+    public InventoryItemData itemData;
+    public GameObject itemIcon;
+    public string acceptableSlotCategory;
+    public string acceptableSlotSubCategory;
+    public GameObject removeItemPanel = null;
+    [SerializeField] private Button playerSlotButton;
+    public void SetEquiptItemIcon(string slotCategoty, string slotSubCategoty, InventoryItemData itemData2)
+    {
+       
+            if (acceptableSlotCategory == "SpaceshipElements" && acceptableSlotSubCategory == slotSubCategoty) 
+            {
+                itemData = itemData2;
+                itemIcon.SetActive(true);
+                itemIcon.GetComponent<Image>().sprite = itemData.itemIcon;
+            }
+           
+        if (acceptableSlotCategory == slotCategoty && acceptableSlotSubCategory == "")
+        {
+            itemData = itemData2;
+            itemIcon.SetActive(true);
+            itemIcon.GetComponent<Image>().sprite = itemData.itemIcon;
+        }
+        else
+        {
+            Debug.Log("Can't set EquiptItemIcon!");
+        }
+       
+    }
+
+    public void ResetPlayerSlot(string slotCategoty)
+    {
+        if (acceptableSlotCategory == slotCategoty) itemData = null;
+    }
+
+    public void ResetPlayerSlot()
+    {
+        itemData = null;
+    }
+    private void Update()
+    {
+        if(itemData == null)
+        {
+            itemIcon.SetActive(false);
+            playerSlotButton.interactable = false;
+        }
+
+        if(itemData != null)
+        {
+            itemIcon.SetActive(true);
+            playerSlotButton.interactable = true;
+            playerSlotButton.onClick.AddListener(ItemRemovePanel);
+            playerSlotButton.onClick.AddListener(SetRemovePanelItemData);
+        }
+    }
+
+    public void ItemRemovePanel()
+    {
+        removeItemPanel.SetActive(true);
+    }
+
+    public void SetRemovePanelItemData()
+    {
+        removeItemPanel.GetComponent<ItemRemovePanel>().itemData = itemData;
+    }
+}

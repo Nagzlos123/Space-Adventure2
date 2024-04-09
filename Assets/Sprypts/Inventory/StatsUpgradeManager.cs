@@ -405,56 +405,8 @@ public class StatsUpgradeManager : MonoBehaviour
 
     private void SetPlayerStac()
     {
-        if (inventorySystemActive == 1)
-        {
-            //ResetPlayerArmorAmplifiers();
-            PlayerPrefs.SetInt("PlayerNormalHPSystem1", 1110);
-            PlayerPrefs.SetInt("PlayerNormalArmorSystem1", 630);
-            PlayerPrefs.SetInt("PlayerNormalAttackSystem1", 50);
 
-            PlayerPrefs.SetInt("StarshipNormalHPSystem1", 1000);
-            PlayerPrefs.SetInt("StarshipNormalAttackSystem1", 30);
 
-            PlayerPrefs.SetInt("PlayerFullHP", PlayerPrefs.GetInt("PlayerNormalHPSystem1"));
-            PlayerPrefs.SetInt("PlayerFullArmor", PlayerPrefs.GetInt("PlayerNormalArmorSystem1"));
-            PlayerPrefs.SetInt("PlayerFullAttack", PlayerPrefs.GetInt("PlayerNormalAttackSystem1"));
-
-            PlayerPrefs.SetInt("SpaceshipFullAttack", PlayerPrefs.GetInt("StarshipNormalAttackSystem1"));
-            PlayerPrefs.SetInt("SpaceshipFullHP", PlayerPrefs.GetInt("StarshipNormalHPSystem1"));
-
-            playerHP.text = PlayerPrefs.GetInt("PlayerFullHP").ToString();
-            playerAttack.text = PlayerPrefs.GetInt("PlayerFullAttack").ToString();
-            playerArmor.text = PlayerPrefs.GetInt("PlayerFullArmor").ToString();
-
-            spaceshipAttack.text = PlayerPrefs.GetInt("SpaceshipFullAttack").ToString();
-            spaceshipHP.text = PlayerPrefs.GetInt("SpaceshipFullHP").ToString();
-
-        }
-        if (inventorySystemActive == 5)
-        {
-            //ResetPlayerArmorAmplifiers();
-            //PlayerPrefs.SetInt("PlayerNormalHPSystem5", 1000);
-            //PlayerPrefs.SetInt("PlayerNormalArmorSystem5", 500);
-            //PlayerPrefs.SetInt("PlayerNormalAttackSystem5", 20);
-
-            PlayerPrefs.SetInt("StarshipNormalHPSystem5", 1000);
-            PlayerPrefs.SetInt("StarshipNormalAttackSystem5", 30);
-
-            //PlayerPrefs.SetInt("PlayerFullHP", PlayerPrefs.GetInt("PlayerNormalHPSystem5"));
-            //PlayerPrefs.SetInt("PlayerFullArmor", PlayerPrefs.GetInt("PlayerNormalArmorSystem5"));
-            //PlayerPrefs.SetInt("PlayerFullAttack", PlayerPrefs.GetInt("PlayerNormalAttackSystem5"));
-
-            PlayerPrefs.SetInt("SpaceshipFullAttack", PlayerPrefs.GetInt("StarshipNormalAttackSystem5"));
-            PlayerPrefs.SetInt("SpaceshipFullHP", PlayerPrefs.GetInt("StarshipNormalHPSystem5"));
-
-            playerHP.text = PlayerPrefs.GetInt("PlayerFullHP").ToString();
-            playerAttack.text = PlayerPrefs.GetInt("PlayerFullAttack").ToString();
-            playerArmor.text = PlayerPrefs.GetInt("PlayerFullArmor").ToString();
-
-            spaceshipAttack.text = PlayerPrefs.GetInt("SpaceshipFullAttack").ToString();
-            spaceshipHP.text = PlayerPrefs.GetInt("SpaceshipFullHP").ToString();
-
-        }
 
 
 
