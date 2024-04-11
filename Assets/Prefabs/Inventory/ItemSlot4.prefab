@@ -732,6 +732,11 @@ MonoBehaviour:
   itemInfoPanel: {fileID: 7924568862089874145}
   addItemPanel: {fileID: 0}
   buyOrSellPanel: {fileID: 0}
+  mouseItem: {fileID: 0}
+  mouseParent: {fileID: 0}
+  equipItemPanel: {fileID: 0}
+  noItemMach: {fileID: 0}
+  equipRemoveItem: {fileID: 0}
   itemSlotButton: {fileID: 1418475382024020430}
 --- !u!114 &3570085296028323683
 MonoBehaviour:

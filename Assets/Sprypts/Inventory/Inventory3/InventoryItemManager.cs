@@ -117,29 +117,6 @@ public class InventoryItemManager : MonoBehaviour
         shopSellBuyManage.GetComponent<ShopSellBuyManager>().ShopItems.Clear();
         shopSellBuyManage.GetComponent<ShopSellBuyManager>().CreateShopSlots("Armor");
     }
-
-  
-
-    public void RemoveAllItems(Inventory2Manager inventory2)
-    {
-        inventory2.ClearItemsList();
-        inventory2.CreateInventorySlots();
-        Debug.Log(" All items in Inventory System 2 was removed!");
-        foreach (var item in playerSlots)
-        {
-            item.ResetPlayerSlot();
-        }
-        PlayerPrefs.SetInt("PlayerFullHP", 1000);
-        PlayerPrefs.SetInt("PlayerFullArmor", 500);
-        PlayerPrefs.SetInt("PlayerFullAttack", 20);
-        PlayerPrefs.SetInt("SpaceshipFullAttack", 5);
-        PlayerPrefs.SetInt("SpaceshipFullHP", 600);
-    }
-
-
-
-
-
     public void RemoveAllItems()
     {
         inventory2.ClearItemsList();
@@ -160,16 +137,6 @@ public class InventoryItemManager : MonoBehaviour
 
         Debug.Log(" All items in Inventory System was removed!");
     }
-
-
-
-    
-
-
-
-
-
-
 
     //Function for Inventory number 2
     public void ChestRandomItemSet( int itemNumber)

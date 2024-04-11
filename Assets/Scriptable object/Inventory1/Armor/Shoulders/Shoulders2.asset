@@ -21,4 +21,5 @@ MonoBehaviour:
   displayName: Shoulders2
   itemCategory: Shoulders
   itemSubCategory: 
+  underlayColor: {r: 1, g: 1, b: 1, a: 1}
   discreption: These Shoulders give you  +2 Armor, +2 Attack +4 Health.

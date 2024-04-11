@@ -21,4 +21,5 @@ MonoBehaviour:
   displayName: Pants2
   itemCategory: Pants
   itemSubCategory: 
+  underlayColor: {r: 1, g: 1, b: 1, a: 1}
   discreption: These Pants give you  +6 Armor, +10 Health.

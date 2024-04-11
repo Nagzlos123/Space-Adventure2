@@ -12,8 +12,11 @@ public class ItemEquipSellPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI itemPrice;
     [SerializeField] private TextMeshProUGUI yourKredytsAmount;
     [SerializeField] private GameObject itemIcon;
+    [SerializeField] private GameObject underlay;
     [SerializeField] private GameObject kredytsManager;
     [SerializeField] private StatsUpgradeManager upgradeManager;
+
+    
     public Inventory2Manager inventory2;
     
 
@@ -21,6 +24,7 @@ public class ItemEquipSellPanel : MonoBehaviour
     private float price;
     public string itemCategory;
     public string itemSubCategory;
+    public Color underlayColor;
     private void Start()
     {
         GetItemData();
@@ -108,6 +112,8 @@ public class ItemEquipSellPanel : MonoBehaviour
             itemPrice.text = price.ToString();
 
             itemIcon.GetComponent<Image>().sprite = currentItemData.itemIcon;
+            underlayColor = currentItemData.underlayColor;
+            underlay.GetComponent<Image>().color = currentItemData.underlayColor;
         }
     }
 

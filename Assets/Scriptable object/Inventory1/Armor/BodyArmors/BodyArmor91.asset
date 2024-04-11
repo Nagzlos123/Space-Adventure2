@@ -20,4 +20,6 @@ MonoBehaviour:
   attackAmplifier: 0
   displayName: BodyArmor10
   itemCategory: Armor
+  itemSubCategory: 
+  underlayColor: {r: 0.82594055, g: 0.04998212, b: 0.9811321, a: 1}
   discreption: This BodyArmor gives you +50 Armor, +40 Health.

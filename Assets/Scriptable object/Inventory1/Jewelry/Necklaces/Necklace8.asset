@@ -20,4 +20,6 @@ MonoBehaviour:
   attackAmplifier: 0
   displayName: Necklace8
   itemCategory: Others
+  itemSubCategory: 
+  underlayColor: {r: 0.9607843, g: 0.73333335, b: 0.06666667, a: 1}
   discreption: This Necklace can be sold for a substantial sum of money.

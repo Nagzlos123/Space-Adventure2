@@ -20,4 +20,6 @@ MonoBehaviour:
   attackAmplifier: 0
   displayName: Helmet2
   itemCategory: Helmets
+  itemSubCategory: 
+  underlayColor: {r: 1, g: 1, b: 1, a: 1}
   discreption: This helmet gives you +4 Armor.

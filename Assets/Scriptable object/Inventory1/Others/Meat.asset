@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 4a39cb4b272639541b7bd5ac0649acf7, type: 3}
   maxStackSize: 30
-  itemCost: 0
+  itemCost: 10
+  armorAmplifier: 0
+  healthAmplifier: 0
+  attackAmplifier: 0
   displayName: Meat
   itemCategory: 
+  itemSubCategory: 
+  underlayColor: {r: 0, g: 0, b: 0, a: 0}
   discreption: 

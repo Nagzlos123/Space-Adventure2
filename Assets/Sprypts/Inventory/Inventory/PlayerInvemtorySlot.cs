@@ -7,6 +7,7 @@ public class PlayerInvemtorySlot : MonoBehaviour
 {
     public InventoryItemData itemData;
     public GameObject itemIcon;
+    public GameObject underlay;
     public string acceptableSlotCategory;
     public string acceptableSlotSubCategory;
     public GameObject removeItemPanel = null;
@@ -25,7 +26,9 @@ public class PlayerInvemtorySlot : MonoBehaviour
         {
             itemData = itemData2;
             itemIcon.SetActive(true);
+            underlay.SetActive(true);
             itemIcon.GetComponent<Image>().sprite = itemData.itemIcon;
+            underlay.GetComponent<Image>().color = itemData.underlayColor;
         }
         else
         {

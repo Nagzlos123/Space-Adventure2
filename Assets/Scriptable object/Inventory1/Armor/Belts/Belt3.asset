@@ -15,6 +15,11 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: c35dcbf36f80e6e42a59207e19f9d018, type: 3}
   maxStackSize: 1
   itemCost: 0
+  armorAmplifier: 0
+  healthAmplifier: 0
+  attackAmplifier: 0
   displayName: Belt3
-  itemCategory: 
+  itemCategory: Belt
+  itemSubCategory: 
+  underlayColor: {r: 0.16470589, g: 0.27450982, b: 0.77254903, a: 1}
   discreption: 

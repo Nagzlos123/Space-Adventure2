@@ -21,4 +21,5 @@ MonoBehaviour:
   displayName: Shoulders7
   itemCategory: Shoulders
   itemSubCategory: 
+  underlayColor: {r: 0.9607843, g: 0.73333335, b: 0.06666667, a: 1}
   discreption: These Shoulders give you  +7 Armor, +7 Attack +14 Health.

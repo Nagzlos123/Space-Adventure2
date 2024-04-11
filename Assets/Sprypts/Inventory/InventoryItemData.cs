@@ -14,7 +14,8 @@ public class InventoryItemData : ScriptableObject
     public string displayName;
     public string itemCategory;
     public string itemSubCategory;
-    
+    public Color underlayColor;
+
     [TextArea(4, 4)]
     public string discreption;
 

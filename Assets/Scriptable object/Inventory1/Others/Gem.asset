@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: e7d29a79bc7fae248887c8a08a160303, type: 3}
   maxStackSize: 10
-  itemCost: 0
+  itemCost: 500
+  armorAmplifier: 0
+  healthAmplifier: 0
+  attackAmplifier: 0
   displayName: Gem
   itemCategory: 
+  itemSubCategory: 
+  underlayColor: {r: 0, g: 0, b: 0, a: 0}
   discreption: 

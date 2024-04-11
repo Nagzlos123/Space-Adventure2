@@ -7,6 +7,7 @@ using TMPro;
 public class Inventory2ItemSlotUI : MonoBehaviour
 {
     public GameObject itemSprite;
+    public GameObject underlay;
     public InventoryItemData itemData;
 
     [SerializeField] private TextMeshProUGUI itemCount = null;
@@ -20,6 +21,8 @@ public class Inventory2ItemSlotUI : MonoBehaviour
     {
         if (itemData != null)
         {
+            underlay.SetActive(true);
+            underlay.GetComponent<Image>().color = itemData.underlayColor;
             itemSprite.SetActive(true);
             itemSprite.GetComponent<Image>().sprite = itemData.itemIcon;
             

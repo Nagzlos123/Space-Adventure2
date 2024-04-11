@@ -21,4 +21,5 @@ MonoBehaviour:
   displayName: Bracers6
   itemCategory: Bracers
   itemSubCategory: 
+  underlayColor: {r: 0.09019608, g: 0.7529412, b: 0.050980393, a: 0.9882353}
   discreption: These Bracers give you  +6 Attack.

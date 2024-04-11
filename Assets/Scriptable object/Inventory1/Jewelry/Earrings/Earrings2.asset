@@ -21,4 +21,5 @@ MonoBehaviour:
   displayName: Earrings2
   itemCategory: Others
   itemSubCategory: 
+  underlayColor: {r: 1, g: 1, b: 1, a: 1}
   discreption: These Earrings can be sold for a substantial sum of money.

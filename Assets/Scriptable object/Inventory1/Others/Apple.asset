@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 5d9ba4e7d0964044ea54abe409d81dfd, type: 3}
   maxStackSize: 30
-  itemCost: 0
+  itemCost: 5
+  armorAmplifier: 0
+  healthAmplifier: 0
+  attackAmplifier: 0
   displayName: Apple
   itemCategory: 
+  itemSubCategory: 
+  underlayColor: {r: 0, g: 0, b: 0, a: 0}
   discreption: 
