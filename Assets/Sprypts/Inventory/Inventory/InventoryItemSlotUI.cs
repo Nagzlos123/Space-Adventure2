@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Inventory2ItemSlotUI : MonoBehaviour
+public class InventoryItemSlotUI : MonoBehaviour
 {
     public GameObject itemSprite;
     public GameObject underlay;
@@ -40,7 +40,8 @@ public class Inventory2ItemSlotUI : MonoBehaviour
 
     void SetSellPanelItemData()
     {
-        itemEquipSellPanel.GetComponent<ItemEquipSellPanel>().itemData = itemData;
+        //itemEquipSellPanel.GetComponent<ItemEquipSellPanel>().itemData = itemData;
+        itemEquipSellPanel.GetComponent<ItemEquipSellPanel>().itemDataGetter.itemData = itemData;
 
     }
 

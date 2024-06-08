@@ -39,7 +39,20 @@ public class PlayerInvemtorySlot : MonoBehaviour
 
     public void ResetPlayerSlot(string slotCategoty)
     {
-        if (acceptableSlotCategory == slotCategoty) itemData = null;
+        if (acceptableSlotCategory == slotCategoty && acceptableSlotSubCategory == "")
+        {
+            itemData = null;
+            underlay.SetActive(false);
+        }
+    }
+
+    public void ResetPlayerSlot(string slotCategoty, string slotSubCategoty)
+    {
+        if (acceptableSlotCategory == slotCategoty && acceptableSlotSubCategory == slotSubCategoty)
+        {
+            itemData = null;
+            
+        }
     }
 
     public void ResetPlayerSlot()
@@ -70,6 +83,6 @@ public class PlayerInvemtorySlot : MonoBehaviour
 
     public void SetRemovePanelItemData()
     {
-        removeItemPanel.GetComponent<ItemRemovePanel>().itemData = itemData;
+        removeItemPanel.GetComponent<ItemRemovePanel>().itemDataGetter.itemData = itemData;
     }
 }

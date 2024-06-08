@@ -8,6 +8,7 @@ public class Inventory4BigSlotUI : MonoBehaviour
 {
     public InventoryItemData itemData;
     [SerializeField] private GameObject itemSprite;
+    [SerializeField] private GameObject underlay;
     [SerializeField] private Button itemSlotButton;
     [HideInInspector]
     public GameObject removeItemPanel = null;
@@ -17,6 +18,8 @@ public class Inventory4BigSlotUI : MonoBehaviour
     {
         if (itemData != null)
         {
+            underlay.SetActive(true);
+            underlay.GetComponent<Image>().color = itemData.underlayColor;
             itemSprite.SetActive(true);
 
 
@@ -34,7 +37,7 @@ public class Inventory4BigSlotUI : MonoBehaviour
 
     public void SetRemovePanelItemData()
     {
-        removeItemPanel.GetComponent<AddRemoveItemPanel>().itemData = itemData;
+        removeItemPanel.GetComponent<AddRemoveItemPanel>().itemDataGetter.itemData = itemData;
     }
 
 

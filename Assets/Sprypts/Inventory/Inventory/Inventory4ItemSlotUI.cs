@@ -65,7 +65,7 @@ public class Inventory4ItemSlotUI : MonoBehaviour
     public void OnItemSlotButtonEnter()
     {
         itemInfoPanel.SetActive(true);
-        itemInfoPanel.GetComponent<ItemInfoShopPanel>().GetItemData();
+        itemInfoPanel.GetComponent<ItemInfoShopPanel>().itemDataGetter.GetItemData();
     }
 
     public void ONItemSlotButtonExit()
@@ -80,7 +80,7 @@ public class Inventory4ItemSlotUI : MonoBehaviour
     }
     void SetAddPanelItemData()
     {
-        addItemPanel.GetComponent<AddRemoveItemPanel>().itemData = itemData;
+        addItemPanel.GetComponent<AddRemoveItemPanel>().itemDataGetter.itemData = itemData;
 
     }
     public void MouseItemPanel()

@@ -6,13 +6,9 @@ using TMPro;
 
 public class ItemEquipSellPanel : MonoBehaviour
 {
-    public InventoryItemData itemData;
+    [Header("Old")]
     public GameObject[] playerSlots;
-    [SerializeField] private TextMeshProUGUI itemDescryption;
-    [SerializeField] private TextMeshProUGUI itemPrice;
     [SerializeField] private TextMeshProUGUI yourKredytsAmount;
-    [SerializeField] private GameObject itemIcon;
-    [SerializeField] private GameObject underlay;
     [SerializeField] private GameObject kredytsManager;
     [SerializeField] private StatsUpgradeManager upgradeManager;
 
@@ -21,13 +17,14 @@ public class ItemEquipSellPanel : MonoBehaviour
     
 
     private float yourKredyts;
-    private float price;
-    public string itemCategory;
-    public string itemSubCategory;
-    public Color underlayColor;
+    
+
+
+    [Header("Data Getter")]
+    public ItemEquipSellPanelGetter itemDataGetter;
     private void Start()
     {
-        GetItemData();
+        itemDataGetter.GetItemData();
     }
     public void EquipItem()
     {
@@ -35,55 +32,61 @@ public class ItemEquipSellPanel : MonoBehaviour
         for (int i = 0; i < playerSlots.Length; i++)
         {
             
-            if(itemCategory == playerSlots[i].GetComponent<PlayerInvemtorySlot>().acceptableSlotCategory 
-                && itemSubCategory == playerSlots[i].GetComponent<PlayerInvemtorySlot>().acceptableSlotSubCategory && itemSubCategory != "")
+            if(itemDataGetter.itemCategory == playerSlots[i].GetComponent<PlayerInvemtorySlot>().acceptableSlotCategory 
+                && itemDataGetter.itemSubCategory == playerSlots[i].GetComponent<PlayerInvemtorySlot>().acceptableSlotSubCategory 
+                && itemDataGetter.itemSubCategory != "")
             {
                 if(playerSlots[i].GetComponent<PlayerInvemtorySlot>().itemData == null)
                 {
                     Debug.Log("Item equiped!");
-                    playerSlots[i].GetComponent<PlayerInvemtorySlot>().SetEquiptItemIcon(itemCategory, itemSubCategory, itemData);
-                    inventory2.RemoveItem(itemData);
+                    playerSlots[i].GetComponent<PlayerInvemtorySlot>().SetEquiptItemIcon(itemDataGetter.itemCategory,
+                        itemDataGetter.itemSubCategory, itemDataGetter.itemData);
+                    inventory2.RemoveItem(itemDataGetter.itemData);
                     inventory2.SortItemList();
-                    inventory2.CreateInventorySlots(itemCategory);
-                    AddPlayerStats(itemCategory, itemSubCategory);
+                    inventory2.CreateInventorySlots(itemDataGetter.itemCategory);
+                    AddPlayerStats(itemDataGetter.itemCategory, itemDataGetter.itemSubCategory);
                 }
                 else
                 {
                     inventory2.AddItem(playerSlots[i].GetComponent<PlayerInvemtorySlot>().itemData);
                     inventory2.SortItemList();
-                    SubtractPlayerStats(itemCategory, itemSubCategory);
+                    SubtractPlayerStats(itemDataGetter.itemCategory, itemDataGetter.itemSubCategory);
                     Debug.Log("Item equiped!");
-                    playerSlots[i].GetComponent<PlayerInvemtorySlot>().SetEquiptItemIcon(itemCategory, itemSubCategory, itemData);
-                    inventory2.RemoveItem(itemData);
+                    playerSlots[i].GetComponent<PlayerInvemtorySlot>().SetEquiptItemIcon(itemDataGetter.itemCategory,
+                        itemDataGetter.itemSubCategory, itemDataGetter.itemData);
+                    inventory2.RemoveItem(itemDataGetter.itemData);
                     inventory2.SortItemList();
-                    inventory2.CreateInventorySlots(itemCategory);
-                    AddPlayerStats(itemCategory, itemSubCategory);
+                    inventory2.CreateInventorySlots(itemDataGetter.itemCategory);
+                    AddPlayerStats(itemDataGetter.itemCategory, itemDataGetter.itemSubCategory);
                 }
                
             }
 
-            if (itemCategory == playerSlots[i].GetComponent<PlayerInvemtorySlot>().acceptableSlotCategory && itemSubCategory == "")
+            if (itemDataGetter.itemCategory == playerSlots[i].GetComponent<PlayerInvemtorySlot>().acceptableSlotCategory 
+                && itemDataGetter.itemSubCategory == "")
             {
                 if (playerSlots[i].GetComponent<PlayerInvemtorySlot>().itemData == null)
                 {
                     Debug.Log("Item equiped!");
-                    playerSlots[i].GetComponent<PlayerInvemtorySlot>().SetEquiptItemIcon(itemCategory, itemSubCategory, itemData);
-                    inventory2.RemoveItem(itemData);
+                    playerSlots[i].GetComponent<PlayerInvemtorySlot>().SetEquiptItemIcon(itemDataGetter.itemCategory,
+                        itemDataGetter.itemSubCategory, itemDataGetter.itemData);
+                    inventory2.RemoveItem(itemDataGetter.itemData);
                     inventory2.SortItemList();
-                    inventory2.CreateInventorySlots(itemCategory);
-                    AddPlayerStats(itemCategory, itemSubCategory);
+                    inventory2.CreateInventorySlots(itemDataGetter.itemCategory);
+                    AddPlayerStats(itemDataGetter.itemCategory, itemDataGetter.itemSubCategory);
                 }
                 else
                 {
                     inventory2.AddItem(playerSlots[i].GetComponent<PlayerInvemtorySlot>().itemData);
                     inventory2.SortItemList();
-                    SubtractPlayerStats(itemCategory, itemSubCategory);
+                    SubtractPlayerStats(itemDataGetter.itemCategory, itemDataGetter.itemSubCategory);
                     Debug.Log("Item equiped!");
-                    playerSlots[i].GetComponent<PlayerInvemtorySlot>().SetEquiptItemIcon(itemCategory, itemSubCategory, itemData);
-                    inventory2.RemoveItem(itemData);
+                    playerSlots[i].GetComponent<PlayerInvemtorySlot>().SetEquiptItemIcon(itemDataGetter.itemCategory,
+                        itemDataGetter.itemSubCategory, itemDataGetter.itemData);
+                    inventory2.RemoveItem(itemDataGetter.itemData);
                     inventory2.SortItemList();
-                    inventory2.CreateInventorySlots(itemCategory);
-                    AddPlayerStats(itemCategory, itemSubCategory);
+                    inventory2.CreateInventorySlots(itemDataGetter.itemCategory);
+                    AddPlayerStats(itemDataGetter.itemCategory, itemDataGetter.itemSubCategory);
                 }
 
             }
@@ -93,33 +96,17 @@ public class ItemEquipSellPanel : MonoBehaviour
     public void SellItem()
     {
         Debug.Log("Item sold!");
-        inventory2.RemoveItem(itemData);
+        inventory2.RemoveItem(itemDataGetter.itemData);
         inventory2.SortItemList();
-        kredytsManager.GetComponent<KredytsManager>().AddKredyts(price);
-        inventory2.CreateInventorySlots(itemCategory);
+        kredytsManager.GetComponent<KredytsManager>().AddKredyts(itemDataGetter.price);
+        inventory2.CreateInventorySlots(itemDataGetter.itemCategory);
     }
 
-    public void GetItemData()
-    {
-        if (itemData != null)
-        {
-            InventoryItemData currentItemData = itemData;
-            var descryption = currentItemData.discreption;
-            itemCategory = currentItemData.itemCategory;
-            itemSubCategory = currentItemData.itemSubCategory;
-            price = currentItemData.itemCost;
-            itemDescryption.text = descryption;
-            itemPrice.text = price.ToString();
 
-            itemIcon.GetComponent<Image>().sprite = currentItemData.itemIcon;
-            underlayColor = currentItemData.underlayColor;
-            underlay.GetComponent<Image>().color = currentItemData.underlayColor;
-        }
-    }
 
     private void AddPlayerStats(string itemCategory, string itemSubCategory)
     {
-        InventoryItemData currentItemData = itemData;
+        InventoryItemData currentItemData = itemDataGetter.itemData;
         var playerNormalHP = PlayerPrefs.GetInt("PlayerNormalHP");
 
 
@@ -180,7 +167,7 @@ public class ItemEquipSellPanel : MonoBehaviour
 
     private void SubtractPlayerStats(string itemCategory, string itemSubCategory)
     {
-        InventoryItemData currentItemData = itemData;
+        InventoryItemData currentItemData = itemDataGetter.itemData;
         var playerNormalHP = PlayerPrefs.GetInt("PlayerNormalHP");
 
 
@@ -241,6 +228,6 @@ public class ItemEquipSellPanel : MonoBehaviour
     private void Update()
     {
         yourKredyts = PlayerPrefs.GetFloat("yourKredytNumber");
-        GetItemData();
+        itemDataGetter.GetItemData();
     }
 }

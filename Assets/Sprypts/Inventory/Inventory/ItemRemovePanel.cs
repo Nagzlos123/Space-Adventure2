@@ -6,63 +6,52 @@ using TMPro;
 
 public class ItemRemovePanel : MonoBehaviour
 {
-    public InventoryItemData itemData;
+    [Header("Old")]
+    
     public GameObject[] playerSlots;
-    [SerializeField] private TextMeshProUGUI itemDescryption;
-    [SerializeField] private TextMeshProUGUI itemPrice;
-    [SerializeField] private GameObject itemIcon;
+    
     [SerializeField] private StatsUpgradeManager upgradeManager;
     public Inventory2Manager inventory2;
     
-    public string itemCategory;
-    public string itemSubCategory;
-
+    [Header("Data Getter")]
+    public ItemRemovePanelGetter itemDataGetter;
+    private void Start()
+    {
+        itemDataGetter.GetItemData();
+    }
     public void RemoveItem()
     {
         for (int i = 0; i < playerSlots.Length; i++)
         {
 
-            if (itemCategory == playerSlots[i].GetComponent<PlayerInvemtorySlot>().acceptableSlotCategory && itemSubCategory == playerSlots[i].GetComponent<PlayerInvemtorySlot>().acceptableSlotSubCategory
-                && itemSubCategory != "")
+            if (itemDataGetter.itemCategory == playerSlots[i].GetComponent<PlayerInvemtorySlot>().acceptableSlotCategory 
+                && itemDataGetter.itemSubCategory == playerSlots[i].GetComponent<PlayerInvemtorySlot>().acceptableSlotSubCategory
+                && itemDataGetter.itemSubCategory != "")
             {
-                inventory2.AddItem(itemData);
+                inventory2.AddItem(itemDataGetter.itemData);
                 inventory2.SortItemList();
-                inventory2.CreateInventorySlots(itemCategory);
-                playerSlots[i].GetComponent<PlayerInvemtorySlot>().ResetPlayerSlot(itemCategory);
-                SubtractPlayerStats(itemCategory, itemSubCategory);
+                inventory2.CreateInventorySlots(itemDataGetter.itemCategory);
+                playerSlots[i].GetComponent<PlayerInvemtorySlot>().ResetPlayerSlot(itemDataGetter.itemCategory, itemDataGetter.itemSubCategory);
+                SubtractPlayerStats(itemDataGetter.itemCategory, itemDataGetter.itemSubCategory);
                 Debug.Log("Item removed!");
             }
-            if (itemCategory == playerSlots[i].GetComponent<PlayerInvemtorySlot>().acceptableSlotCategory && itemSubCategory == "")
+            if (itemDataGetter.itemCategory == playerSlots[i].GetComponent<PlayerInvemtorySlot>().acceptableSlotCategory 
+                && itemDataGetter.itemSubCategory == "")
             {
-                inventory2.AddItem(itemData);
+                inventory2.AddItem(itemDataGetter.itemData);
                 inventory2.SortItemList();
-                inventory2.CreateInventorySlots(itemCategory);
-                playerSlots[i].GetComponent<PlayerInvemtorySlot>().ResetPlayerSlot(itemCategory);
-                SubtractPlayerStats(itemCategory, itemSubCategory);
+                inventory2.CreateInventorySlots(itemDataGetter.itemCategory);
+                playerSlots[i].GetComponent<PlayerInvemtorySlot>().ResetPlayerSlot(itemDataGetter.itemCategory);
+                SubtractPlayerStats(itemDataGetter.itemCategory, itemDataGetter.itemSubCategory);
                 Debug.Log("Item removed!");
             }
             
         }
     }
-    public void GetItemData()
-    {
-        if (itemData != null)
-        {
-            InventoryItemData currentItemData = itemData;
-            var descryption = currentItemData.discreption;
-            var price = currentItemData.itemCost;
-            itemCategory = currentItemData.itemCategory;
-            itemSubCategory = currentItemData.itemSubCategory;
-            itemDescryption.text = descryption;
-            itemPrice.text = price.ToString();
-
-            itemIcon.GetComponent<Image>().sprite = currentItemData.itemIcon;
-        }
-    }
 
     private void SubtractPlayerStats(string itemCategory, string itemSubCategory)
     {
-        InventoryItemData currentItemData = itemData;
+        InventoryItemData currentItemData = itemDataGetter.itemData;
         var playerNormalHP = PlayerPrefs.GetInt("PlayerNormalHP");
 
 
@@ -123,6 +112,6 @@ public class ItemRemovePanel : MonoBehaviour
 
     private void Update()
     {
-        GetItemData();
+        itemDataGetter.GetItemData();
     }
 }

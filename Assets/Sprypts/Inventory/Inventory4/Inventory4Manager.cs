@@ -52,7 +52,7 @@ public class Inventory4Manager : MonoBehaviour
                 GameObject newItemSlot = Instantiate(inventortSlotParent, inventortSlotList);
                 var itemIcon = newItemSlot.transform.GetChild(0).transform.Find("ItemIcon").GetComponent<Image>();
                
-                newItemSlot.transform.GetChild(1).GetComponent<ItemInfoShopPanel>().itemData = item;
+                newItemSlot.transform.GetChild(1).GetComponent<ItemInfoShopPanel>().itemDataGetter.itemData = item;
                 SetSlot4ItemData(item, newItemSlot, mouseItem, mouseParent, equipRemoveItem);
                 SetSlot4ItemPanels(newItemSlot, equipItemPanel, noItemMach);
                 itemIcon.sprite = item.itemIcon;
@@ -75,7 +75,7 @@ public class Inventory4Manager : MonoBehaviour
             GameObject newItemSlot = Instantiate(inventortSlotParent, inventortSlotList);
             var itemIcon = newItemSlot.transform.GetChild(0).transform.Find("ItemIcon").GetComponent<Image>();
             
-            newItemSlot.transform.GetChild(1).GetComponent<ItemInfoShopPanel>().itemData = item;
+            newItemSlot.transform.GetChild(1).GetComponent<ItemInfoShopPanel>().itemDataGetter.itemData = item;
             SetSlot4ItemData(item, newItemSlot, mouseItem, mouseParent, equipRemoveItem);
             SetSlot4ItemPanels(newItemSlot, equipItemPanel, noItemMach);
             itemIcon.sprite = item.itemIcon;

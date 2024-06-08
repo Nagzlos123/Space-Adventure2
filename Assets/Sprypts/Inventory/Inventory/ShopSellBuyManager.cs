@@ -121,7 +121,7 @@ public class ShopSellBuyManager : MonoBehaviour
                 GameObject newItemSlot = Instantiate(shopSlotParent, shopSlotList);
                 var itemIcon = newItemSlot.transform.GetChild(0).transform.Find("ItemIcon").GetComponent<Image>();
                 //var currentItemData = newItemSlot.transform.GetChild(0).GetComponent<ItemInfoShopPanel>().itemData;
-                newItemSlot.transform.GetChild(1).GetComponent<ItemInfoShopPanel>().itemData = item;
+                newItemSlot.transform.GetChild(1).GetComponent<ItemInfoShopPanel>().itemDataGetter.itemData = item;
                 AddItemToInventory(item, newItemSlot, addBuyItemPanel, buyPanel);
                 itemIcon.sprite = item.itemIcon;
                
@@ -155,7 +155,7 @@ public class ShopSellBuyManager : MonoBehaviour
                 GameObject newItemSlot = Instantiate(inventortSlotParent, inventortSlotList);
                 var itemIcon = newItemSlot.transform.GetChild(0).transform.Find("ItemIcon").GetComponent<Image>();
                 //var currentItemData = newItemSlot.transform.GetChild(0).GetComponent<ItemInfoShopPanel>().itemData;
-                newItemSlot.transform.GetChild(1).GetComponent<ItemInfoShopPanel>().itemData = item;
+                newItemSlot.transform.GetChild(1).GetComponent<ItemInfoShopPanel>().itemDataGetter.itemData = item;
                 AddItemToInventory(item, newItemSlot, addSellItemPanel, addSellItemPanel);
                 itemIcon.sprite = item.itemIcon;
 
@@ -184,7 +184,7 @@ public class ShopSellBuyManager : MonoBehaviour
            GameObject newItemSlot = Instantiate(inventortSlotParent, inventortSlotList);
            var itemIcon = newItemSlot.transform.GetChild(0).transform.Find("ItemIcon").GetComponent<Image>();
            //var currentItemData = newItemSlot.transform.GetChild(0).GetComponent<ItemInfoShopPanel>().itemData;
-           newItemSlot.transform.GetChild(1).GetComponent<ItemInfoShopPanel>().itemData = item;
+           newItemSlot.transform.GetChild(1).GetComponent<ItemInfoShopPanel>().itemDataGetter.itemData = item;
            AddItemToInventory(item, newItemSlot, addSellItemPanel, addSellItemPanel);
            itemIcon.sprite = item.itemIcon;
 

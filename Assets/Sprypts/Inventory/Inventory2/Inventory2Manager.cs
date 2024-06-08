@@ -115,13 +115,13 @@ public class Inventory2Manager : MonoBehaviour
     }
     public void AddItemToInventory(InventoryItemData itemData, GameObject itemSlotUI)
     {
-        itemSlotUI.GetComponent<Inventory2ItemSlotUI>().itemData = itemData;
+        itemSlotUI.GetComponent<InventoryItemSlotUI>().itemData = itemData;
        
     }
     public void AddItemToInventory(InventoryItemData itemData, GameObject itemSlotUI, GameObject itemEquipSellPanel)
     {
-        itemSlotUI.GetComponent<Inventory2ItemSlotUI>().itemData = itemData;
-        itemSlotUI.GetComponent<Inventory2ItemSlotUI>().itemEquipSellPanel = itemEquipSellPanel;
+        itemSlotUI.GetComponent<InventoryItemSlotUI>().itemData = itemData;
+        itemSlotUI.GetComponent<InventoryItemSlotUI>().itemEquipSellPanel = itemEquipSellPanel;
     }
 
     public void RemoveItemFromInventory(InventoryItemData itemData, GameObject itemSlotUI)
