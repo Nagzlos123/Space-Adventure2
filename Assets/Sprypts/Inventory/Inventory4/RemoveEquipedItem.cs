@@ -36,7 +36,7 @@ public class RemoveEquipedItem : MonoBehaviour
                 inventory4.SortItemList();
                 inventory4.CreateInventorySlots(itemCategory);
                 playerSlots[i].GetComponent<PlayerInvemtorySlot4>().ResetPlayerSlot(itemCategory);
-                SubtractPlayerStats(itemCategory, itemSubCategory);
+                upgradeManager.SubtractPlayerStats(itemCategory, itemSubCategory, itemData);
                 Debug.Log("Item removed!");
             }
             if (itemCategory == playerSlots[i].GetComponent<PlayerInvemtorySlot4>().acceptableSlotCategory && itemSubCategory == "")
@@ -45,72 +45,13 @@ public class RemoveEquipedItem : MonoBehaviour
                 inventory4.SortItemList();
                 inventory4.CreateInventorySlots(itemCategory);
                 playerSlots[i].GetComponent<PlayerInvemtorySlot4>().ResetPlayerSlot(itemCategory);
-                SubtractPlayerStats(itemCategory, itemSubCategory);
+                upgradeManager.SubtractPlayerStats(itemCategory, itemSubCategory, itemData);
                 Debug.Log("Item removed!");
             }
         }
     }
 
-    private void SubtractPlayerStats(string itemCategory, string itemSubCategory)
-    {
-        InventoryItemData currentItemData = itemData;
-        var playerNormalHP = PlayerPrefs.GetInt("PlayerNormalHP");
 
-
-        var hpUpgrade = currentItemData.healthAmplifier;
-        var armorUpgrade = currentItemData.armorAmplifier;
-        var attackUpgrade = currentItemData.attackAmplifier;
-
-        if (itemCategory == "Helmets")
-        {
-            upgradeManager.GetComponent<StatsUpgradeManager>().SubtractHelmetItemAmplifiers(armorUpgrade);
-        }
-
-        if (itemCategory == "Shoulders")
-        {
-            upgradeManager.GetComponent<StatsUpgradeManager>().SubtractShouldersItemAmplifiers(hpUpgrade, armorUpgrade, attackUpgrade);
-        }
-
-        if (itemCategory == "Armor")
-        {
-            upgradeManager.GetComponent<StatsUpgradeManager>().SubtractBodyArmorItemAmplifiers(hpUpgrade, armorUpgrade);
-        }
-
-        if (itemCategory == "Pants")
-        {
-            upgradeManager.GetComponent<StatsUpgradeManager>().SubtractPantsItemAmplifiers(hpUpgrade, armorUpgrade);
-        }
-
-        if (itemCategory == "Gloves")
-        {
-            upgradeManager.GetComponent<StatsUpgradeManager>().SubtractGlovesItemAmplifiers(armorUpgrade, attackUpgrade);
-        }
-
-        if (itemCategory == "Boots")
-        {
-            upgradeManager.GetComponent<StatsUpgradeManager>().SubtractBootsItemAmplifiers(armorUpgrade);
-        }
-
-        if (itemCategory == "Bracers")
-        {
-            upgradeManager.GetComponent<StatsUpgradeManager>().SubtractBracersItemAmplifiers(attackUpgrade);
-        }
-
-        if (itemCategory == "SpaceshipElements" && itemSubCategory == "Engine")
-        {
-            upgradeManager.GetComponent<StatsUpgradeManager>().SubtractEngineItemAmplifiers(hpUpgrade);
-        }
-
-        if (itemCategory == "SpaceshipElements" && itemSubCategory == "Liser1")
-        {
-            upgradeManager.GetComponent<StatsUpgradeManager>().SubtractLiser1ItemAmplifiers(attackUpgrade);
-        }
-
-        if (itemCategory == "SpaceshipElements" && itemSubCategory == "Liser2")
-        {
-            upgradeManager.GetComponent<StatsUpgradeManager>().SubtractLiser2ItemAmplifiers(attackUpgrade);
-        }
-    }
     public void GetItemData()
     {
         if (itemData != null)

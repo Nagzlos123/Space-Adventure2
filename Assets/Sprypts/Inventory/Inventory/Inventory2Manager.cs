@@ -18,6 +18,7 @@ public class Inventory2Manager : MonoBehaviour
 
     public GameObject inventorySlotParent;
     public Transform itemContent;
+    public string categoryItem;
 
     //[SerializeField] private GameObject itemIcon;
     private void Start()
@@ -58,9 +59,22 @@ public class Inventory2Manager : MonoBehaviour
 
         }
     }
+    public void CreateCorrectInventorySlots(string itemCategory)
+    {
+        if(itemCategory == "AllItems")
+        {
+            CreateInventorySlots();
+        }
+        else
+        {
+            CreateInventorySlots(itemCategory);
+        }
+    }
 
     public void CreateInventorySlots(string itemCategory)
     {
+        SaveCurrentItemCategorySelected(itemCategory);
+        LoadCurrentItemCategorySelected();
         tmpList.Clear();
         foreach (Transform item in itemContent)
         {
@@ -94,6 +108,8 @@ public class Inventory2Manager : MonoBehaviour
 
     public void CreateInventorySlots()
     {
+        PlayerPrefs.SetString("CurrentItemCategorySelected", "AllItems");
+        LoadCurrentItemCategorySelected();
         foreach (Transform item in itemContent)
         {
             Destroy(item.gameObject);
@@ -130,6 +146,15 @@ public class Inventory2Manager : MonoBehaviour
         {
             itemSlotUI.GetComponent<Inventory3ItemSlotUI>().itemData = null;
         }
+    }
+    private void SaveCurrentItemCategorySelected(string itemCategory)
+    {
+        PlayerPrefs.SetString("CurrentItemCategorySelected", itemCategory);
+    }
+
+    private void LoadCurrentItemCategorySelected()
+    {
+        categoryItem = PlayerPrefs.GetString("CurrentItemCategorySelected");
     }
 
     private void Update()

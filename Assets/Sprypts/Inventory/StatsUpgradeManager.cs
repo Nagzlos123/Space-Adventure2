@@ -393,8 +393,6 @@ public class StatsUpgradeManager : MonoBehaviour
         spaceshipnormalHP = PlayerPrefs.GetInt("StarshipNormalHP");
         engineHP = PlayerPrefs.GetInt("EngineHPAmplifier");
 
-        SetPlayerStac();
-
         playerHP.text = PlayerPrefs.GetInt("PlayerFullHP").ToString();
         playerAttack.text = PlayerPrefs.GetInt("PlayerFullAttack").ToString();
         playerArmor.text = PlayerPrefs.GetInt("PlayerFullArmor").ToString();
@@ -403,15 +401,126 @@ public class StatsUpgradeManager : MonoBehaviour
         spaceshipHP.text = PlayerPrefs.GetInt("SpaceshipFullHP").ToString();
     }
 
-    private void SetPlayerStac()
+    public void SubtractPlayerStats(string itemCategory, string itemSubCategory, InventoryItemData itemData)
     {
+        InventoryItemData currentItemData = itemData;
+        var playerNormalHP = PlayerPrefs.GetInt("PlayerNormalHP");
 
 
+        var hpUpgrade = currentItemData.healthAmplifier;
+        var armorUpgrade = currentItemData.armorAmplifier;
+        var attackUpgrade = currentItemData.attackAmplifier;
 
+        if (itemCategory == "Helmets")
+        {
+           SubtractHelmetItemAmplifiers(armorUpgrade);
+        }
 
+        if (itemCategory == "Shoulders")
+        {
+            SubtractShouldersItemAmplifiers(hpUpgrade, armorUpgrade, attackUpgrade);
+        }
 
+        if (itemCategory == "Armor")
+        {
+            SubtractBodyArmorItemAmplifiers(hpUpgrade, armorUpgrade);
+        }
+
+        if (itemCategory == "Pants")
+        {
+            SubtractPantsItemAmplifiers(hpUpgrade, armorUpgrade);
+        }
+
+        if (itemCategory == "Gloves")
+        {
+            SubtractGlovesItemAmplifiers(armorUpgrade, attackUpgrade);
+        }
+
+        if (itemCategory == "Boots")
+        {
+            SubtractBootsItemAmplifiers(armorUpgrade);
+        }
+
+        if (itemCategory == "Bracers")
+        {
+            SubtractBracersItemAmplifiers(attackUpgrade);
+        }
+
+        if (itemCategory == "SpaceshipElements" && itemSubCategory == "Engine")
+        {
+            SubtractEngineItemAmplifiers(hpUpgrade);
+        }
+
+        if (itemCategory == "SpaceshipElements" && itemSubCategory == "Liser1")
+        {
+            SubtractLiser1ItemAmplifiers(attackUpgrade);
+        }
+
+        if (itemCategory == "SpaceshipElements" && itemSubCategory == "Liser2")
+        {
+            SubtractLiser2ItemAmplifiers(attackUpgrade);
+        }
     }
 
-     
-    
+    public void AddPlayerStats(string itemCategory, string itemSubCategory, InventoryItemData itemData)
+    {
+        InventoryItemData currentItemData = itemData;
+        var playerNormalHP = PlayerPrefs.GetInt("PlayerNormalHP");
+
+
+        var hpUpgrade = currentItemData.healthAmplifier;
+        var armorUpgrade = currentItemData.armorAmplifier;
+        var attackUpgrade = currentItemData.attackAmplifier;
+
+        if (itemCategory == "Helmets")
+        {
+            AddHelmetItemAmplifiers(armorUpgrade);
+        }
+
+        if (itemCategory == "Shoulders")
+        {
+            AddShouldersItemAmplifiers(hpUpgrade, armorUpgrade, attackUpgrade);
+        }
+
+        if (itemCategory == "Armor")
+        {
+            AddBodyArmorItemAmplifiers(hpUpgrade, armorUpgrade);
+        }
+
+        if (itemCategory == "Pants")
+        {
+            AddPantsItemAmplifiers(hpUpgrade, armorUpgrade);
+        }
+
+        if (itemCategory == "Gloves")
+        {
+           AddGlovesItemAmplifiers(armorUpgrade, attackUpgrade);
+        }
+
+        if (itemCategory == "Boots")
+        {
+            AddBootsItemAmplifiers(armorUpgrade);
+        }
+
+        if (itemCategory == "Bracers")
+        {
+            AddBracersItemAmplifiers(attackUpgrade);
+        }
+
+        if (itemCategory == "SpaceshipElements" && itemSubCategory == "Engine")
+        {
+            AddEngineItemAmplifiers(hpUpgrade);
+        }
+
+        if (itemCategory == "SpaceshipElements" && itemSubCategory == "Liser1")
+        {
+            AddLiser1ItemAmplifiers(attackUpgrade);
+        }
+
+        if (itemCategory == "SpaceshipElements" && itemSubCategory == "Liser2")
+        {
+           AddLiser2ItemAmplifiers(attackUpgrade);
+        }
+    }
+
 }
