@@ -1577,6 +1577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93af6e37aa6937f4a935929d726e574a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ContinueButton: {fileID: 1714862006}
+  isGameSaved: 0
 --- !u!4 &303535295
 Transform:
   m_ObjectHideFlags: 0
@@ -5422,7 +5424,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.3137255, g: 0.9607843, b: 0.9607843, a: 0.64705884}
     m_PressedColor: {r: 0.3137255, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.3137255, g: 0.9607843, b: 0.9607843, a: 0.57254905}
-    m_DisabledColor: {r: 0.3137255, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 0.018796539, b: 0, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:

@@ -11,10 +11,7 @@ public class ActiveInventorySaveData : MonoBehaviour
     [SerializeField] private InventoryItemManager inventoryItemManager;
 
     public List<PlayerInvemtorySlot> playerSlotsInventory2List = new List<PlayerInvemtorySlot>();
-    public List<PlayerInvemtorySlot4> playerSlotsInventory4List = new List<PlayerInvemtorySlot4>();
     public List<InventoryItemData> playerSlotsInventory2ItemData = new List<InventoryItemData>();
-    
-   
 
     [SerializeField] private Button saveButton;
     [SerializeField] private GameObject saveGameInfoPanel;
@@ -24,8 +21,6 @@ public class ActiveInventorySaveData : MonoBehaviour
     private KredytsData MyKredytsData = new KredytsData();
     private InventorySystemData MyInventorySystem2Data = new InventorySystemData();
 
-   
-   
     private bool isSaveOn = false;
     private int isLoadOn = 0;
     private int autoLoadOn;
@@ -64,12 +59,7 @@ public class ActiveInventorySaveData : MonoBehaviour
             playerSlotsInventory2ItemData.Add(item.GetComponent<PlayerInvemtorySlot>().itemData);
         }
     }
-
-
-
-
-
-    private void SetPlayerInventory2SlotsData()
+    private void SetPlayerInventorySlotsData()
     {
         List<InventoryItemData> tmpList = new List<InventoryItemData>();
         tmpList = MyInventorySystem2Data.playerSlotsInventory2ItemData;
@@ -86,20 +76,36 @@ public class ActiveInventorySaveData : MonoBehaviour
         }
     }
 
+    private void GetInventoryData()
+    {
+        inventorySystemActive = PlayerPrefs.GetInt("InventorySystemActive");
+        MyActiveInventoryData.activeInventorySystemID = PlayerPrefs.GetInt("InventorySystemActive");
+        MyKredytsData.yourKredytsNumber = PlayerPrefs.GetFloat("yourKredytNumber");
 
+        MyInventorySystem2Data.inventory2 = inventoty2Manager.Items;
+        GetItemDataInventor2Value();
+        MyInventorySystem2Data.inventorySellItems = shopSellBuyManager.InventorySellItems;
+        MyInventorySystem2Data.shopItems = shopSellBuyManager.ShopItems;
+        MyInventorySystem2Data.playerSlotsInventory2ItemData = playerSlotsInventory2ItemData;
+        MyInventorySystem2Data.playerFullHP = PlayerPrefs.GetInt("PlayerFullHP");
+        MyInventorySystem2Data.playerFullArmor = PlayerPrefs.GetInt("PlayerFullArmor");
+        MyInventorySystem2Data.playerFullAttack = PlayerPrefs.GetInt("PlayerFullAttack");
+        MyInventorySystem2Data.spaceshipFullAttack = PlayerPrefs.GetInt("SpaceshipFullAttack");
+        MyInventorySystem2Data.spaceshipFullHP = PlayerPrefs.GetInt("SpaceshipFullHP");
+    }
 
-    public void AutoSave()
+    public void SaveData()
     {
         SaveGameManeger.CurrentGameSaveData.ActiveInventorySaveData = MyActiveInventoryData;
         SaveGameManeger.CurrentGameSaveData.KredytsData = MyKredytsData;
         SaveGameManeger.CurrentGameSaveData.InventorySystemData = MyInventorySystem2Data;
-       
-    
-       
         SaveGameManeger.Save();
+        saveGameInfoPanel.SetActive(true);
+        isSaveOn = false;
+        PlayerPrefs.SetInt("GameSaved", 1);
     }
 
-    public void AutoLoad()
+    public void LoadData()
     {
         SaveGameManeger.Load();
         MyActiveInventoryData = SaveGameManeger.CurrentGameSaveData.ActiveInventorySaveData;
@@ -110,8 +116,10 @@ public class ActiveInventorySaveData : MonoBehaviour
 
         MyInventorySystem2Data = SaveGameManeger.CurrentGameSaveData.InventorySystemData;
         inventoty2Manager.Items = MyInventorySystem2Data.inventory2;
+        shopSellBuyManager.InventorySellItems = MyInventorySystem2Data.inventorySellItems;
+        shopSellBuyManager.ShopItems = MyInventorySystem2Data.shopItems;
         playerSlotsInventory2ItemData = MyInventorySystem2Data.playerSlotsInventory2ItemData;
-        //SetPlayerInventory2SlotsData();
+        SetPlayerInventorySlotsData();
         inventoty2Manager.CreateInventorySlots();
         PlayerPrefs.SetInt("PlayerFullHP", MyInventorySystem2Data.playerFullHP);
         PlayerPrefs.SetInt("PlayerFullArmor", MyInventorySystem2Data.playerFullArmor);
@@ -121,23 +129,11 @@ public class ActiveInventorySaveData : MonoBehaviour
 
 
         loadGameInfoPanel.SetActive(true);
-        //PlayerPrefs.SetInt("GameLoaded", 0);
-    
-}
+        PlayerPrefs.SetInt("GameLoaded", 0);
+    }
     private void Update()
     {
-        inventorySystemActive = PlayerPrefs.GetInt("InventorySystemActive");
-        MyActiveInventoryData.activeInventorySystemID = PlayerPrefs.GetInt("InventorySystemActive");
-        MyKredytsData.yourKredytsNumber = PlayerPrefs.GetFloat("yourKredytNumber");
-
-        MyInventorySystem2Data.inventory2 = inventoty2Manager.Items;
-        GetItemDataInventor2Value();
-        MyInventorySystem2Data.playerSlotsInventory2ItemData = playerSlotsInventory2ItemData;
-        MyInventorySystem2Data.playerFullHP = PlayerPrefs.GetInt("PlayerFullHP");
-        MyInventorySystem2Data.playerFullArmor = PlayerPrefs.GetInt("PlayerFullArmor");
-        MyInventorySystem2Data.playerFullAttack = PlayerPrefs.GetInt("PlayerFullAttack");
-        MyInventorySystem2Data.spaceshipFullAttack = PlayerPrefs.GetInt("SpaceshipFullAttack");
-        MyInventorySystem2Data.spaceshipFullHP = PlayerPrefs.GetInt("SpaceshipFullHP");
+        GetInventoryData();
         autoLoadOn = PlayerPrefs.GetInt("AutoLoadOn");
         autoSaveOn = PlayerPrefs.GetInt("AutoSaveOn");
         saveButton.onClick.AddListener(SetSaveOn);
@@ -145,37 +141,12 @@ public class ActiveInventorySaveData : MonoBehaviour
 
         if (Input.GetKeyDown("s") || isSaveOn == true)
         {
-            SaveGameManeger.CurrentGameSaveData.ActiveInventorySaveData = MyActiveInventoryData;
-            SaveGameManeger.CurrentGameSaveData.KredytsData = MyKredytsData;
-            SaveGameManeger.CurrentGameSaveData.InventorySystemData = MyInventorySystem2Data;
-            SaveGameManeger.Save();
-            saveGameInfoPanel.SetActive(true);
-            isSaveOn = false;
+            SaveData();
         }
 
         if (Input.GetKeyDown("l") || isLoadOn == 1)
         {
-            SaveGameManeger.Load();
-            MyActiveInventoryData = SaveGameManeger.CurrentGameSaveData.ActiveInventorySaveData;
-            PlayerPrefs.SetInt("InventorySystemActive", MyActiveInventoryData.activeInventorySystemID);
-
-            MyKredytsData = SaveGameManeger.CurrentGameSaveData.KredytsData;
-            PlayerPrefs.SetFloat("yourKredytNumber", MyKredytsData.yourKredytsNumber);
-           
-                MyInventorySystem2Data = SaveGameManeger.CurrentGameSaveData.InventorySystemData;
-                inventoty2Manager.Items = MyInventorySystem2Data.inventory2;
-                playerSlotsInventory2ItemData = MyInventorySystem2Data.playerSlotsInventory2ItemData;
-                //SetPlayerInventory2SlotsData();
-                inventoty2Manager.CreateInventorySlots();
-                PlayerPrefs.SetInt("PlayerFullHP", MyInventorySystem2Data.playerFullHP);
-                PlayerPrefs.SetInt("PlayerFullArmor", MyInventorySystem2Data.playerFullArmor);
-                PlayerPrefs.SetInt("PlayerFullAttack", MyInventorySystem2Data.playerFullAttack);
-                PlayerPrefs.SetInt("SpaceshipFullAttack", MyInventorySystem2Data.spaceshipFullAttack);
-                PlayerPrefs.SetInt("SpaceshipFullHP", MyInventorySystem2Data.spaceshipFullHP);      
-
-
-            loadGameInfoPanel.SetActive(true);
-            PlayerPrefs.SetInt("GameLoaded", 0);
+            LoadData();
         }
 
         if (autoLoadOn == 1)
