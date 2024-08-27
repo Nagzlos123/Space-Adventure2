@@ -54,5 +54,9 @@ public class ItemRemovePanel : MonoBehaviour
     private void Update()
     {
         itemDataGetter.GetItemData();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //this.gameObject.SetActive(false);
+        }
     }
 }
