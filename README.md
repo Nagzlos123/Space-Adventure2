@@ -59,8 +59,6 @@ Save.txt file.
 
 ![](Github_images/04_System1Info3.png)
 
-![](Github_images/05_System2Info2.png)
-
 ![](Github_images/06_System2Info6.png)
 
 ![](Github_images/09_System4Info5.png)
