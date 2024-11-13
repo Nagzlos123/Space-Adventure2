@@ -31,18 +31,7 @@ This massive 2D computer game contains inventory systems consisting of over 120 
 - Grid Layout Groups,
 - Prefabs.
   
-The game also has mechanisms for selling and buying items. 
 
-In system number 3, you can buy 3 chests (lootboxes) in the store:
-
-- the first chest costs 2000 credits and contains 4 random items,
-- the second chest costs 4000 credits and contains 6 random items,
-- the third chest costs 6,000 credits and contains 8 random items,
-
-Drawn items may be repeated multiple times.
-
-
-In system number 4 
 Purchasing items is only possible if the shopping cart is present
 active.The basket consists of several important parts:
 1. A small information panel about your funds.
@@ -71,12 +60,5 @@ Save.txt file.
 
 ![](Github_images/06_System2Info6.png)
 
-![](Github_images/07_System2Info7.png)
-
-![](Github_images/08_System4Info17.png)
-
 ![](Github_images/09_System4Info5.png)
 
-![](Github_images/10_System5Info3.png)
-
-![](Github_images/11_System5Info7.png)
